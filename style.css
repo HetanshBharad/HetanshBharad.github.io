@@ -1,0 +1,482 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+.main{
+  display: flex;
+}
+
+.main2 img{
+  filter: invert(1);
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.main2{
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+.profile-pic-post{
+  display: inline-flex;
+  filter: invert(1);
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.comment__card .comment_textbox{
+  max-width: calc(100% - 40px);
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  margin-top: 5px;
+  position: relative;
+  display: flex;
+  justify-items: flex-start;
+  padding-top: 15px;
+}
+
+.comment__card .username_textbox{
+  width: 100%;
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-items: flex-start;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+.profile-pic img {
+  filter: invert(1);
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.comment__card .comment_textbox input,
+.comment__card .username_textbox input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border-bottom: 2px solid silver;
+}
+
+.comment_textbox input:valid ~ label,
+.comment_textbox input:focus ~ label,
+.username_textbox input:valid ~ label,
+.username_textbox input:focus ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: white;
+  border: none;
+}
+
+.comment_textbox label,
+.username_textbox label{
+  position: absolute;
+  bottom: 10px;  
+  left: 0;
+  color: gray;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.comment_textbox .underline,
+.username_textbox .underline{
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+}
+
+.comment_textbox .underline:before,
+.username_textbox .underline:before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.comment_textbox input:valid ~ .underline:before,
+.comment_textbox input:focus ~ .underline:before,
+.username_textbox input:valid ~ .underline:before,
+.username_textbox input:focus ~ .underline:before{
+  transform: scaleX(1);
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #34495e;
+  z-index: 1;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  background-color: #1d2b3a;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.card h2{
+  color: rgb(255, 255, 255, 0.25);
+}
+
+.card button{
+  color: whitesmoke;
+  text-decoration: double;
+  background-color: rgb(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.comment__card #main_page_comment_button{
+    cursor: pointer;
+    margin-top: 10px;
+    color: whitesmoke;
+    text-decoration: double;
+    background-color: rgb(255, 255, 255, 0.25);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+
+.comment__card #main_page_cancel_button {
+  cursor: pointer;
+  margin-top: 10px;
+  color: whitesmoke;
+  text-decoration: double;
+  background-color: rgb(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.post-button{
+  color: whitesmoke;
+  text-decoration: double;
+  background-color: rgb(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  width: min(90%, 1140px);
+  margin: 3rem auto;
+}
+
+
+.card:focus-within #card_heading{
+  color: #00dfc4;
+}
+
+.inputBox{
+  position: relative;
+  width: 250px;
+}
+
+.inputBox input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.inputBox span{
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  font-size: 1em;
+  color: rgb(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+  color: #00dfc4;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4;
+  letter-spacing: 0.2em;
+}
+
+.inputBox input:valid,
+.inputBox input:focus{
+  border: 1px solid #00dfc4;
+}
+
+.comment__container.hidden {
+  display: none;
+}
+
+html {
+  font-size: 16px;
+  min-height: 100%;
+}
+
+body {
+  background-color: #222831;
+  min-height: 100vh;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+#welcome_username{
+  color: white; 
+  width: min(90%, 1140px);
+  margin: 3rem auto;
+}
+
+.container {
+  display: block;
+  width: min(90%, 1140px);
+  margin: 3rem auto;
+}
+
+.comment__container {
+  display: block;
+  position: relative;
+}
+
+.comment__container::before {
+  content: "";
+  background-color: rgb(170, 170, 170);
+  position: absolute;
+  min-height: 100%;
+  width: 1px;
+  left: -10px;
+}
+
+.comment__container:not(:first-of-type) {
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+.comment__card {
+  padding: 20px;
+  background-color: #393E46;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  min-width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  color: white;
+  align-items: center;
+}
+
+.comment__card h3{
+  margin-bottom: 1rem;
+}
+
+.comment__card p{
+  margin-bottom: 1rem;
+  margin-left: 36px;
+}
+
+
+.comment__card-footer {
+  display: flex;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  gap: 5px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.comment__title{
+  display: inline-flex;
+  position: relative;
+}
+
+.comment__card-header {
+  display: inline-flex;
+  float: right;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.reply-button {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  background-color: #393E46;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.reply-button:hover::after {
+  content: "Reply";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.like-button:hover::after {
+  content: "Upvote";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.delete-button:hover::after {
+  content: "Delete";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.edit-button:hover::after {
+  content: "Edit";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.show-replies{
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+
+.upvote-image{
+  filter: invert(1);
+  width: 27px;
+  height: 27px;
+}
+
+.delete-image{
+  filter: invert(1);
+  width: 27px;
+  height: 27px;
+}
+
+.edit-image{
+  filter: invert(1);
+  width: 25px;
+  height: 25px;
+}
+
+.reply-image{
+  filter: invert(1);
+  height: 24px;
+  width: 23px;
+}
+
+.like-button,
+.delete-button,
+.edit-button {
+    background-color: #393E46;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+  }
+
+.like-count{
+  margin-left: 5px;
+}
+  
+.like-count.clicked {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  

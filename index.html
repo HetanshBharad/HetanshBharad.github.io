@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested Comment Indentation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!--<div class="overlay"></div>
+    <div class="card" onload="changeTheColorOfButton()">
+      <h2 id="card_heading">Please Enter Your Username</h2>
+      <div class="inputBox">
+        <input type="text" id="username" name="username" required="required" onkeyup="changeTheColorOfButton()" autocomplete="off">
+        <span>Username</span>
+      </div>
+      <button id="card_submit_button" type="submit" onclick="validate(event)">Submit</button>
+    </div> -->
+
+    <h1>Comments Section</h1>
+
+    <!-- <h2 id="welcome_username">Welcome, <span id="username-display"></span>!</h2> -->
+
+    <div class="container" id="home_page_comment">
+        <div class="comment__card">
+            <h2 style="text-align: center;">Write a Post</h2>
+            <div class="main">
+                <div class="profile-pic">
+                    <img src="/static/profilepic.png"  alt="User profile photo">
+                </div>
+
+                
+                <div class="username_textbox">
+                    <input type="text" id="username" name="username" class="input-field" required autocomplete="off">
+                    <div class="underline"></div>
+                    <label class="input-label">Username</label>
+                </div>
+            </div>
+
+            <div class="comment_textbox">
+                <input type="text" id="comment_tb" name="comment_tb" class="input-field" required autocomplete="off">
+                <div class="underline"></div>
+                <label class="input-label">Comment</label>
+            </div>
+            
+            <button id="main_page_cancel_button" type="button" onclick="clearComment('comment_tb')">Cancel</button>
+            <button id="main_page_comment_button" type="button" onclick="submitComment()">Submit</button>
+        </div>
+
+        <h1>Posts</h1>
+            
+    </div>
+
+    <script src="/static/index.js"></script>
+
+</body>
+
+</html>
