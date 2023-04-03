@@ -29,7 +29,7 @@ function editComment(button) {
   <div class="comment__card">
     <div class="main">
       <div class="profile-pic">
-        <img src="/static/profilepic.png"  alt="User profile photo">
+        <img src="./static/profilepic.png"  alt="User profile photo">
       </div>
                 
       <div class="username_textbox">
@@ -88,7 +88,7 @@ function addReplyBox(replyButton) {
   <div class="comment__card">
     <div class="main">
       <div class="profile-pic">
-        <img src="/static/profilepic.png"  alt="User profile photo">
+        <img src="./static/profilepic.png"  alt="User profile photo">
       </div>
 
   
@@ -185,15 +185,15 @@ function submitInnerComment(name, comment, parentCommentContainer) {
     var commentHTML = `
       <div class="comment__card">
         <div class="main2">
-          <img src="static/profilepic.png" alt="User Profile Pic">
+          <img src="./static/profilepic.png" alt="User Profile Pic">
           <h3 class="comment__title">${name}</h3>
         </div>
         <div class="comment__card-header">
           <button class="delete-button" onclick="deleteComment(this)">
-            <img src="static/delete.png" alt="Delete" class="delete-image">
+            <img src="./static/delete.png" alt="Delete" class="delete-image">
           </button>
           <button class="edit-button" onclick="editComment(this)">
-            <img src="static/edit.png" alt="Edit" class="edit-image">
+            <img src="./static/edit.png" alt="Edit" class="edit-image">
           </button>
         </div>
         <div class="comment__card-body">
@@ -201,11 +201,11 @@ function submitInnerComment(name, comment, parentCommentContainer) {
         </div>
         <div class="comment__card-footer">
           <button class="like-button" onclick="likeComment(this)">
-            <img src="static/upvote.png" alt="Like" class="upvote-image">
+            <img src="./static/upvote.png" alt="Like" class="upvote-image">
           </button>
           <span class="like-count">0</span>
           <button class="reply-button" onclick="addReplyBox(this)">
-            <img src="static/reply.png" alt="Reply" class="reply-image">
+            <img src="./static/reply.png" alt="Reply" class="reply-image">
           </button>
           <div class="show-replies" onclick="showReplies_function(this)">Replies</div>
           <span class="replies-count">0</span>
@@ -236,15 +236,15 @@ function submitComment() {
     var commentCardDiv = `
       <div class="comment__card" id="mainchild">
         <div class="main2">
-          <img src="static/profilepic.png" alt="User Profile Pic">
+          <img src="./static/profilepic.png" alt="User Profile Pic">
           <h3 class="comment__title">${name}</h3>
         </div>
         <div class="comment__card-header">
           <button class="delete-button" onclick="deleteComment(this)">
-            <img src="static/delete.png" alt="Delete" class="delete-image">
+            <img src="./static/delete.png" alt="Delete" class="delete-image">
           </button>
           <button class="edit-button" onclick="editComment(this)">
-            <img src="static/edit.png" alt="Edit" class="edit-image">
+            <img src="./static/edit.png" alt="Edit" class="edit-image">
           </button>
         </div>
         <div class="comment__card-body">
@@ -252,11 +252,11 @@ function submitComment() {
         </div>
         <div class="comment__card-footer">
           <button class="like-button" onclick="likeComment(this)">
-            <img src="static/upvote.png" alt="Like" class="upvote-image">
+            <img src="./static/upvote.png" alt="Like" class="upvote-image">
           </button>
           <span class="like-count">0</span>
           <button class="reply-button" onclick="addReplyBox(this)">
-            <img src="static/reply.png" alt="Reply" class="reply-image">
+            <img src="./static/reply.png" alt="Reply" class="reply-image">
           </button>
           <div class="show-replies" onclick="showReplies_function(this)">Replies</div>
           <span class="replies-count">0</span>
