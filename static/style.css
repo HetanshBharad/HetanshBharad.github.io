@@ -318,6 +318,7 @@ h1 {
   margin-bottom: 20px;
   color: white;
   align-items: center;
+  overflow: auto;
 }
 
 .comment__card h3{
